@@ -1,9 +1,11 @@
-export function qs(element) {
-  return document.querySelector(element);
+export function qs(element, searchIn) {
+  searchIn = document || searchIn;
+  return searchIn.querySelector(element);
 }
 
-export function qsa(elements) {
-  return Array.from(document.querySelectorAll(elements));
+export function qsa(elements, searchIn) {
+  searchIn = document || searchIn;
+  return Array.from(searchIn.querySelectorAll(elements));
 }
 
 export function on(element, type, callback) {

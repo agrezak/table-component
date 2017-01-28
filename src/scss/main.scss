@@ -1,4 +1,6 @@
 @import "variables/setup";
 @import "variables/global";
-@import "layout/grid";
+@import "common/normalize";
+@import "common/base";
+@import "grid/grid";
 @import "components/tables";
