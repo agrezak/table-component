@@ -27,11 +27,16 @@
       color: $table-text;
       background-color: $table-row-bg;
       transition: all 0.25s ease;
+      &:last-of-type {
+        text-align: right;
+        padding: 0 18px;
+      }
       &:hover {
         background-color: $table-row-bg-hover;
       }
     }
     i {
+      color: $table-warning;
       pointer-events: none;
     }
   }

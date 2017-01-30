@@ -1,0 +1,14 @@
+.JS-confirm-action {
+  padding: 0 !important;
+  &:after {
+    content: "CONFIRM";
+    background: $table-confirm;
+    padding: 0;
+    padding: 0 18px;
+    margin-left: 2px;
+  }
+}
+
+.JS-cancel-action {
+  color: #fff;
+}
