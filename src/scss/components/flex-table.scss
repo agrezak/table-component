@@ -1,0 +1,57 @@
+.flex-table {
+	border-collapse: collapse;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+
+	tr {
+		position: relative;
+	}
+
+	th {
+		padding-left: 16px;
+	}
+
+	thead {
+		position: relative;
+
+		th {
+			font-size: 1.28rem;
+			font-weight: 400;
+			color: $table-text-header;
+			padding-bottom: 15px;
+		}
+	}
+
+	tbody {
+		tr {
+			height: 40px;
+		}
+
+		th {
+			font-weight: 400;
+			color: $table-text;
+			background-color: $table-row-bg;
+			transition: all 0.25s ease;
+
+			&:last-of-type {
+				text-align: right;
+				padding: 0 18px;
+			}
+
+			&:hover {
+				background-color: $table-row-bg-hover;
+			}
+		}
+
+		i {
+			color: $table-warning;
+			pointer-events: none;
+		}
+	}
+}
+
+.flex-table-wrapper {
+	width: 640px;
+	height: 314px;
+}
