@@ -1,9 +1,8 @@
-$table-l: 640px;
-$table-s: 360px;
-
 .flex-table {
 
 	font-family: $rubik, sans-serif;
+	$table-l: 640px;
+	$table-s: 400px;
 
 	&__section {
 		display: flex;
@@ -57,6 +56,15 @@ $table-s: 360px;
 			&:hover {
 				background-color: $table-row-bg-hover;
 
+				&:after {
+					width: $table-l;
+					margin-left: 0;
+
+					@include mobile {
+						width: $table-s;
+					}
+				}
+
 				.column:last-of-type {
 					padding: 0;
 					&:after {
@@ -68,6 +76,10 @@ $table-s: 360px;
 						height: 100%;
 						line-height: 40px;
 						padding: 0 17px;
+
+						@include mobile {
+							padding: 0 5px 0 0;
+						}
 					}
 				}
 			}
@@ -96,15 +108,4 @@ $table-s: 360px;
 		pointer-events: none;
 	}
 
-}
-
-.flex-table-wrapper {
-	max-width: $table-l;
-	max-height: 314px;
-	margin: 0 auto;
-	overflow: hidden;
-
-	@include mobile {
-		max-width: $table-s;
-	}
 }
