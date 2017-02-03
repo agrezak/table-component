@@ -1,57 +1,109 @@
+$table-l: 640px;
+$table-s: 360px;
+
 .flex-table {
-	border-collapse: collapse;
-	width: 100%;
-	height: 100%;
-	text-align: left;
 
-	tr {
-		position: relative;
+	font-family: $rubik, sans-serif;
+
+	&__section {
+		display: flex;
+		justify-content: center;
+		height: 100vh;
+		width: 100%;
+		background: $table-bg;
+		overflow: hidden;
 	}
 
-	th {
-		padding-left: 16px;
-	}
+	&__wrapper {
+		overflow: hidden;
+		height: 320px;
+		width: $table-l;
 
-	thead {
-		position: relative;
-
-		th {
-			font-size: 1.28rem;
-			font-weight: 400;
-			color: $table-text-header;
-			padding-bottom: 15px;
+		@include mobile {
+			width: $table-s;
 		}
 	}
 
-	tbody {
-		tr {
-			height: 40px;
-		}
+	&__head {
+		font-size: 1.28rem;
+		font-weight: 400;
+		color: $table-text-header;
+		padding-bottom: 15px;
+	}
 
-		th {
-			font-weight: 400;
-			color: $table-text;
-			background-color: $table-row-bg;
-			transition: all 0.25s ease;
+	&__body {
+		font-weight: 400;
+		color: $table-text;
+		background-color: $table-row-bg;
+		transition: 0.25s ease;
 
-			&:last-of-type {
-				text-align: right;
-				padding: 0 18px;
+		.row {
+			position: relative;
+
+			&:after {
+				content: '';
+				text-align: center;
+				height: 2px;
+				background: #111d29;
+				width: calc(#{$table-l} - 20px);
+				margin-left: 10px;
+
+				@include mobile {
+					width: calc(#{$table-s} - 10px)
+				}
 			}
 
 			&:hover {
 				background-color: $table-row-bg-hover;
+
+				.column:last-of-type {
+					padding: 0;
+					&:after {
+						color: $white;
+						z-index: 50;
+						content: "DELETE";
+						background: $table-warning;
+						display: inline-block;
+						height: 100%;
+						line-height: 40px;
+						padding: 0 17px;
+					}
+				}
 			}
 		}
 
-		i {
-			color: $table-warning;
-			pointer-events: none;
+		.column {
+			height: 40px;
+			line-height: 40px;
+			transition: 0.5s ease;
+
+			&:last-of-type {
+				text-align: right;
+				cursor: pointer;
+			}
 		}
 	}
+
+	.row {
+		transition: 0.5s ease;
+	}
+
+	.fa-trash-o {
+		font-size: 1.25rem;
+		color: $table-warning;
+		padding-right: 8px;
+		pointer-events: none;
+	}
+
 }
 
 .flex-table-wrapper {
-	width: 640px;
-	height: 314px;
+	max-width: $table-l;
+	max-height: 314px;
+	margin: 0 auto;
+	overflow: hidden;
+
+	@include mobile {
+		max-width: $table-s;
+	}
 }

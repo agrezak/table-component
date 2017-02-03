@@ -1,0 +1,44 @@
+@import "../media/media";
+
+
+.row {
+	max-width: $main-width;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.column {
+	padding: 0 $gutter;
+	min-width: 0px;
+}
+
+@function gridWidth($number) {
+	 @return $number * $baseWidth;
+}
+
+@for $i from 1 through $col {
+	.small-#{$i} {
+		max-width: gridWidth($i);
+		flex: 0 0 gridWidth($i);
+	}
+}
+
+@for $i from 1 through $col {
+	.medium-#{$i} {
+		@media screen and (min-width: $tablet) {
+			max-width: gridWidth($i);
+			flex: 0 0 gridWidth($i);
+		}
+	}
+}
+
+@for $i from 1 through $col {
+	.large-#{$i} {
+		@media screen and (min-width: $desktop) {
+			max-width: gridWidth($i);
+			flex: 0 0 gridWidth($i);
+		}
+	}
+}

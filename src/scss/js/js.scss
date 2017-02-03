@@ -1,14 +1,37 @@
 .JS-confirm-action {
   padding: 0 !important;
   &:after {
-    content: "CONFIRM";
-    background: $table-confirm;
+	z-index: 100;
+    content: "CONFIRM" !important;
+    background: $table-confirm !important;
     padding: 0;
-    padding: 0 18px;
+    padding: 0 12px !important;
     margin-left: 2px;
+	display: inline-block;
+	height: 100%;
+	line-height: 40px;
   }
 }
 
-.JS-cancel-action {
+.JS-highlight-row {
+	background-color: $table-row-bg-hover !important;
+}
+
+.JS-cancel-action.fa {
   color: #fff;
+  cursor: pointer;
+  margin-top: 50px;
+  transition: 0.5s ease;
+  display: block;
+  text-align: center;
+
+  &:hover {
+	  color: $table-warning;
+	  opacity: 0.65;
+  }
+}
+
+.JS-remove-row {
+	opacity: 0.25;
+	transform: translateX(-500px);
 }

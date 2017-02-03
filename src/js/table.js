@@ -5,40 +5,58 @@ export class Table {
     constructor(element) {
         this.element = element;
         this.events(element);
-        this.css = "JS-confirm-action";
+        this.cssConfirm = "JS-confirm-action";
+		this.cssHighlight = "JS-highlight-row";
     }
 
     events(table) {
-        let tableTrigger = qsa("[data-action-trigger]", table);
-        let cancelTrigger = qs("[data-cancel-trigger]");
+        const tableTrigger = qsa("[data-action-trigger]", table);
+        const cancelTrigger = qs("[data-cancel-trigger]");
 
         on(tableTrigger, "click", this.confirmAction.bind(this));
         on(cancelTrigger, "click", this.cancelDeletion.bind(this));
     }
 
-    confirmAction() {
-        let element = event.target;
-        let row = element.parentNode;
+    confirmAction(event) {
+        const element = event.target;
+        const row = element.parentNode;
+		const siblings = Array.from(row.children);
 
-        if (element.classList.contains(this.css)) {
-            this.deleteRow(this.row);
+        if (element.classList.contains(this.cssConfirm)) {
+            this.deleteRow(row);
             return;
         }
 
-        element.classList.add(this.css);
-
+		element.classList.add(this.cssConfirm);
+		this.highlightRow(siblings);
 
     }
 
+	highlightRow(elements) {
+		elements.forEach(i => {
+			i.classList.toggle(this.cssHighlight);
+		});
+	}
+
     cancelDeletion() {
-        let rows = qsa(".JS-confirm-action");
-        rows.forEach(i => {
-            i.classList.remove(this.css);
+        const el = qsa(".JS-confirm-action");
+		const row = qsa(".JS-highlight-row");
+
+        el.forEach(i => {
+            i.classList.remove(this.cssConfirm);
         });
+
+		row.forEach(i => {
+			i.classList.remove(this.cssHighlight);
+		});
     }
 
     deleteRow(row) {
-        row.parentNode.removeChild(row);
+		row.classList.add("JS-remove-row");
+
+		setTimeout(() => {
+			row.parentNode.removeChild(row);
+		}, 350);
     }
 
 }

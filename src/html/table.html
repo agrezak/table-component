@@ -1,25 +1,64 @@
-<section class="flex-table-section">
+<section class="flex-table flex-table__section">
 	<main>
-		<div class="flex-table-wrapper">
-			<table class="flex-table" data-flex-table>
-				<thead>
-					@@include("partials/table-head.html")
-				</thead>
-				<tbody>
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-					@@include("partials/table-row.html")
-				</tbody>
-			</table>
-			<i class="fa fa-power-off JS-cancel-action" aria-hidden="true" data-cancel-trigger></i>
+		<div class="flex-table flex-table__wrapper">
+			<div class="overflow">
+			<div class="flex-table flex-table__head" data-flex-table>
+				@@include("partials/table-head.html")
+			</div>
+			<div class="flex-table flex-table__body">
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "1",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "2",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "3",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "4",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "5",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "6",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "7",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "8",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "9",
+					"zodiac" : "Gemini"
+				})
+				@@include("partials/table-row.html", {
+					"name" : "Lorem",
+					"age" : "10",
+					"zodiac" : "Gemini"
+				})
+			</div>
 		</div>
+		</div>
+		<i class="fa fa-power-off fa-4x JS-cancel-action" aria-hidden="true" data-cancel-trigger></i>
 	</main>
-	</div>
 </section>
