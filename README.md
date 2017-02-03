@@ -1,7 +1,5 @@
 # table-component
 
-Make sure your NodeJS version is at least 4.x (run node -v).
-
 ##How to install?
 
 Clone the repo:
