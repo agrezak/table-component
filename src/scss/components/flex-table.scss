@@ -15,9 +15,10 @@ $table-s: 360px;
 	}
 
 	&__wrapper {
-		overflow: hidden;
+		overflow: auto;
 		height: 320px;
 		width: $table-l;
+		transition: 0.5s ease;
 
 		@include mobile {
 			width: $table-s;
