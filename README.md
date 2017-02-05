@@ -24,8 +24,4 @@ gulp build
 Find a way to hide scrollbar on Firefox. ;)
 The good old overflow:hidden + overflow:auto seems not to be working.
 
-Create the table dynamically (build based on JSON file).
-
-
-
-
+Create the table dynamically (build based on JSON file) - [work in progress], neeeds refactor + events binding;
