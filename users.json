@@ -1,0 +1,15 @@
+{
+    "firstUser": {
+        "name": "John",
+        "age": "Doe",
+        "zodiac": "Gemini",
+        "action": ""
+    },
+
+    "secondUser": {
+        "name": "John",
+        "age": "Unknown",
+        "zodiac": "Cancer",
+        "action": ""
+    }
+}

@@ -1,6 +1,6 @@
 import { qs, qsa, on } from "./helpers";
 
-export class Table {
+export default class Table {
 
     constructor(element) {
         this.element = element;

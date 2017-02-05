@@ -70,7 +70,8 @@ gulp.task("fileinclude", function() {
 gulp.task("browserSync", () => {
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: "./dist",
+			port: 8080
         }
     });
 });

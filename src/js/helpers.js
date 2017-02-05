@@ -9,7 +9,7 @@ export function qsa(elements, searchIn) {
 }
 
 export function on(element, type, callback) {
-  let arr = element.constructor === Array;
+  const arr = element.constructor === Array;
 
   if(arr) {
     element.forEach(i => {
